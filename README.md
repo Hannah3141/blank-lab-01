@@ -1,13 +1,7 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=17822307&assignment_repo_type=AssignmentRepo)
 # CS-2003-Lab-1
 
-## Overview
-You are an agent that works for the Type Unknown Criminal Services (TU CS), which is investigative unit hired to assess potential crimes that require an alternative perspective. TU CS has been hired to investigate the death of the mayor of Turingville, who passed away suddenly late last night while locked away in his office. The cause of death, means, and motive are unclear. His death could just be due to natural causes, but the local police would like to be sure. You've been requested to determine if there is any evidence that might shed light on the circumstances surrounding the mayor's passing.
-
-Your investigation begins in the mayor's office. Nothing stood out during the first few hours of combing through his belongings, but you've recently noticed that the mayor's desk is littered with papers. This is not unexpected, but after paying closer attention to some of the documents, what first appears to be terrible handwriting turns out to be actual nonsense. You suspect that several of the papers were written in code. It is now your responsibility to write an algorithm to decode the documents.
-
 ## Assignment - Part I
-In this assignment, you are tasked with implementing a [Caesar shift cipher](https://cryptii.com/pipes/caesar-cipher) to decode the mayor's documents. A Caesar shift cipher is a type of encoding where each character in the original message is replaced by another character that is X larger (the shift offset) in lexicographic order. For example, the word 'hey' could be encoded as 'kh|' using a shift of X=3. **Note that the characters can include numbers, special characters, and lowercase and uppercase characters.** Lexicographic order is determined by the [ASCII table](https://www.asciitable.com/). On the ASCII table, the characters 'h', 'e', and 'y' have the numeric values 104, 101, and 121, respectively. By increasing each of these values by 3 (the shift offset), we compute the numbers 107, 104, and 124, which are the characters 'k', 'h', and '|', respectively.
+In this assignment, you are tasked with implementing a [Caesar shift cipher](https://cryptii.com/pipes/caesar-cipher). A Caesar shift cipher is a type of encoding where each character in the original message is replaced by another character that is X larger (the shift offset) in lexicographic order. For example, the word 'hey' could be encoded as 'kh|' using a shift of X=3. **Note that the characters can include numbers, special characters, and lowercase and uppercase characters.** Lexicographic order is determined by the [ASCII table](https://www.asciitable.com/). On the ASCII table, the characters 'h', 'e', and 'y' have the numeric values 104, 101, and 121, respectively. By increasing each of these values by 3 (the shift offset), we compute the numbers 107, 104, and 124, which are the characters 'k', 'h', and '|', respectively.
 
 You will receive the content of each message over STDIN as well as the suspected shift offset. Your algorithm must then compute the decoded message by shifting each character in the message using the shift offset. **Don't forget to ask yourself whether you should shift forwards or backwards when decoding.** You must output the decoded message on STDOUT.
 
@@ -31,39 +25,6 @@ You are to output a single line containing the decoded message on STDOUT.
 | `12` | |
 | `Olssv3'^vysk` | |
 | `7` | `Hello, World` |
-
-## Grading Rubric
-- [ ] (35pts) Completes Assignment - Part I
-- [ ] (35pts) Completes Assignment - Part II
-- [ ] (15pts each) Manual review conducted by the instructor and/or TA(s)
-
-## Submission
-The assignment is due by the end-of-day Friday of the following week.
-
-To submit your work, you must _stage_, _commit_, and _sync_ your changes. If you need assistance submitting your work, please contact your instructor or a TA. After submitting, you can check the **Actions** tab on your GitHub repo online to ensure that your work was submitted and to see the results of the autograder. If the autograder shows a green check for your latest commit, you've completed the autograded portion of the lab. Note that labs also include a manually graded portion.
-
-### Commits
-Commits should be made incrementally. Many commits are always better than few, and commits can always be squashed together later if there are too many. You should try to make a commit every time you've made tangible progress in the development of your code.
-
-Every commit should have a commit message. The standard format for commit messages is to start with a verb in present-tense followed by a concise message (typically less than 50 characters) that summarizes the change that the commit is introducing to the repo. For example, "updates README", "implements Array", "passes testGet".
-
-Popular IDEs, such as Visual Studio Code, provide integrated Git tools. If you're on Windows, you can install Git Bash or Windows Subsystem for Linux (WSL). If you're on Mac or Linux, you already have git installed. Mac users will need to ensure that XCode stays up to date.
-
-You can use the Source Control (branch) extension provided by VS Code to stage, commit, and sync your assignment. These three steps are the submission process. To stage changes, use the plus sign next to each file. To commit changes, add a commit message in the text field at the top and then click commit. To sync changes, click the sync button.
-
-At some point, you'll want to get familiar with using the git terminal commands instead.
-
-To sync changes made from another device, use the following command.
-- `git fetch origin main`
-- `git pull origin main`
-
-To push commits from command line, use the following commands.
-- `git add -A`
-- `git commit -m "<your message goes here>"`
-- `git push origin main`
-
-You can also sync all changes and submit with the following commands depending on your terminal.
-- `./build.sh submit`
 
 ## Assignment - Part II
 After decoding the first document, you notice that only fragments of its contents appear to be legible. It would appear that each document uses a combination of different shift offsets. You'll need to modify your algorithm to be able to apply different shift offsets to different slices of the message. A [slice](https://en.wikipedia.org/wiki/Array_slicing) in this context is a substring of consecutive characters that start at one position in the string and end at another (or go to the end of the string). **Note that you must still shift every character in the message using the initial shift number.**
@@ -92,20 +53,6 @@ You are to output a single line containing the decoded message on STDOUT.
 | `5` | |
 | `7 12` | |
 | `1` | `Hello, World` |
-
-## Help
-
-### Can't submit due to Git log
-If you've just installed git or this is your first time submitting an assignment with git on this machine, it will need to be configured. The easiest way to configure git is from a terminal. Use the following commands. Note that the quotes need to stay but the angular brackets (<>) should be replaced alongside your username and email.
-- `git config --global user.name "<github-username-goes-here>"`
-- `git config --global user.email "<github-email-goes-here>"`
-- `git config --global pull.rebase false`
-- `git config --global fetch.prune true` (optional)
-- `git config --global diff.colorMoved zebra` (optional)
-
-### Can't sync due to Git error
-In some cases, when you attempt to sync, you'll see a down-arrow rather than just an up-arrow. The up-arrow indicates that you have changes that need to be pushed to the cloud whereas the down-arrow indicates that there are changes in the cloud that need to be pulled to your machine. You can use the ellipsis at the top next to the commit text field to navigate to the pull option which will download and apply those changes to your local machine. If you're unable to use the sync button, please pull first. This may create conflicts on your machine which will have to be resolved manually. If you need help, please ask your instructor or a TA for assistance. Once all changes have been pulled and the down-arrow is gone, you can sync your changes.
-- You may find it easier to use `git pull origin main` in your terminal
 
 ## Hints
 
@@ -147,6 +94,43 @@ char[] chars = new char[n];
 // do stuff
 String out = new String(chars);
 ```
+
+### Commits
+Commits should be made incrementally. Many commits are always better than few, and commits can always be squashed together later if there are too many. You should try to make a commit every time you've made tangible progress in the development of your code.
+
+Every commit should have a commit message. The standard format for commit messages is to start with a verb in present-tense followed by a concise message (typically less than 50 characters) that summarizes the change that the commit is introducing to the repo. For example, "updates README", "implements Array", "passes testGet".
+
+Popular IDEs, such as Visual Studio Code, provide integrated Git tools. If you're on Windows, you can install Git Bash or Windows Subsystem for Linux (WSL). If you're on Mac or Linux, you already have git installed. Mac users will need to ensure that XCode stays up to date.
+
+You can use the Source Control (branch) extension provided by VS Code to stage, commit, and sync your assignment. These three steps are the submission process. To stage changes, use the plus sign next to each file. To commit changes, add a commit message in the text field at the top and then click commit. To sync changes, click the sync button.
+
+At some point, you'll want to get familiar with using the git terminal commands instead.
+
+To sync changes made from another device, use the following command.
+- `git fetch origin main`
+- `git pull origin main`
+
+To push commits from command line, use the following commands.
+- `git add -A`
+- `git commit -m "<your message goes here>"`
+- `git push origin main`
+
+You can also sync all changes and submit with the following commands depending on your terminal.
+- `./build.sh submit`
+
+## Help
+
+### Can't submit due to Git log
+If you've just installed git or this is your first time submitting an assignment with git on this machine, it will need to be configured. The easiest way to configure git is from a terminal. Use the following commands. Note that the quotes need to stay but the angular brackets (<>) should be replaced alongside your username and email.
+- `git config --global user.name "<github-username-goes-here>"`
+- `git config --global user.email "<github-email-goes-here>"`
+- `git config --global pull.rebase false`
+- `git config --global fetch.prune true` (optional)
+- `git config --global diff.colorMoved zebra` (optional)
+
+### Can't sync due to Git error
+In some cases, when you attempt to sync, you'll see a down-arrow rather than just an up-arrow. The up-arrow indicates that you have changes that need to be pushed to the cloud whereas the down-arrow indicates that there are changes in the cloud that need to be pulled to your machine. You can use the ellipsis at the top next to the commit text field to navigate to the pull option which will download and apply those changes to your local machine. If you're unable to use the sync button, please pull first. This may create conflicts on your machine which will have to be resolved manually. If you need help, please ask your instructor or a TA for assistance. Once all changes have been pulled and the down-arrow is gone, you can sync your changes.
+- You may find it easier to use `git pull origin main` in your terminal
 
 ## Compiling and Testing Code
 Your IDE should provide tools to compile your code. If you're unfamiliar with that process, instructions are provided on Harvey. While we'll be using VS Code in this course, most developers compile and run their code from command line using a shell script, such as a **Makefile** or build script (**build.sh**).
