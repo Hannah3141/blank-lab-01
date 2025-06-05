@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.Scanner;
+
 /** An implementation of a Caesar shift cipher. */
 public class Main {
 
@@ -12,5 +14,13 @@ public class Main {
    */
   public static void main(String[] args) {
     // TODO: print the decoded message
+    Scanner input =  new Scanner(System.in);
+
+    int length = input.nextInt();
+    input.nextLine();
+    String message = input.nextLine();
+    int shift = input.nextInt();
+
+    System.out.println(length + message + shift);
   }
 }
