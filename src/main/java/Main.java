@@ -14,13 +14,23 @@ public class Main {
    */
   public static void main(String[] args) {
     // TODO: print the decoded message
-    Scanner input =  new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
     int length = input.nextInt();
     input.nextLine();
-    String message = input.nextLine();
-    int shift = input.nextInt();
 
-    System.out.println(length + message + shift);
+    String message = input.nextLine();
+
+    int shift = input.nextInt();
+    input.nextLine();
+
+    String result = "";
+    for(int i = 0; i < message.length(); i++){
+      int letter = message.charAt(i);
+      char newLetter = (char)(letter - shift);
+      result += newLetter;
+    }
+
+    System.out.println(result);
   }
 }
